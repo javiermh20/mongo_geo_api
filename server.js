@@ -16,7 +16,7 @@ mongoose.connect(
 ).then(
     () => { /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
         app.listen(4000, () => {
-            console.log('Server running on http://127.0.0.1:4000');
+            console.log('Server running on http://192.168.100.161:4000');
         })
     },
     err => { /** handle initial connection error */

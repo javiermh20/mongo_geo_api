@@ -27,7 +27,7 @@ const addUser = (req, res) => {
         name: req.body.name,
         username: req.body.username,
         password: req.body.password,
-        latestLatitude : req.body.latestLatitude,
+        latestLaltitude : req.body.latestLaltitude,
         latestLongitude : req.body.latestLongitude
     });
     user.save().then((usr) => {
