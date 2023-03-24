@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./api/users');
-
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -16,10 +15,11 @@ mongoose.connect(
 ).then(
     () => { /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
         app.listen(4000, () => {
-            console.log('Server running on http://192.168.100.161:4000');
+            console.log('Server running on http://172.18.69.192:4000');
         })
     },
     err => { /** handle initial connection error */
         err & console.log(err) & console.log('Error connecting to db');
     }
 );
+
