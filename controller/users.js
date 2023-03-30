@@ -40,9 +40,13 @@ const addUser = (req, res) => {
 
 const updateUserLocation = (req, res) => {
     console.log(req.body);
-    User.updateOne({_id:req.body.id}, 
-    {latestLaltitude:req.body.latestLaltitude, 
-        latestLongitude: req.body.latestLongitude}).then((usr) =>{
+    const key = Object.keys(req.body)[0];
+    console.log(key);
+    const parsedKey = JSON.parse(key);
+    console.log(parsedKey);
+    User.updateOne({_id:parsedKey.id}, 
+        {latestLaltitude:parsedKey.latestLaltitude, 
+            latestLongitude: parsedKey.latestLongitude}).then((usr) =>{
             res.status(200).json(usr);
         },
         err => {
