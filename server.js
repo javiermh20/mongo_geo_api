@@ -26,11 +26,11 @@ mongoose.connect(
 ).then(
     () => { /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
         app.listen(4000, () => {
-            console.log('Server running on http://172.18.70.33:4000');
+            console.log('Server running on http://172.18.70.156:4000');
         })
 
         httpsServer.listen(5176, ()=>{
-            console.log('Server running on https://172.18.70.33:5176');
+            console.log('Server running on https://172.18.70.156:5176');
           });
     },
     err => { /** handle initial connection error */

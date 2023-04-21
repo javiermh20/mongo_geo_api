@@ -10,6 +10,10 @@ router.post('/add', UserController.addUser);
 
 router.post('/updateUserLocation', UserController.updateUserLocation);
 
+router.post('updUserLocation', UserController.updUserLocation);
+
 router.get('/byusername/:username', UserController.findByUsername);
+
+router.post('/removebyid', UserController.removeById);
 
 module.exports = router;
