@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./api/users');
+const Branch = require('./api/branchs');
 const cors = require('cors');
 
 var fs = require('fs');
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/api/users', User);
+app.use('/api/branchs', Branch);
 
 httpsServer = https.createServer(credentials, app);
 
@@ -26,11 +28,11 @@ mongoose.connect(
 ).then(
     () => { /** ready to use. The `mongoose.connect()` promise resolves to mongoose instance. */
         app.listen(4000, () => {
-            console.log('Server running on http://172.18.70.156:4000');
+            console.log('Server running on http://172.18.69.218:4000');
         })
 
         httpsServer.listen(5176, ()=>{
-            console.log('Server running on https://172.18.70.156:5176');
+            console.log('Server running on https://172.18.69.218:4000:5176');
           });
     },
     err => { /** handle initial connection error */

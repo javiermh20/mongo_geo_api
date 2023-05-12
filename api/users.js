@@ -4,6 +4,8 @@ const express = require('express');
 const router = express.Router();
 router.get('/all', UserController.findAllUsers);
 
+router.get('/allGeo', UserController.findAllGeoUsers);
+
 router.get('/:id', UserController.findById);
 
 router.post('/add', UserController.addUser);
